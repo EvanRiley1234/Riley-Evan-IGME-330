@@ -2,14 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <title>Greeter</title>
     <style>
       *{font-size:1.5em;}
+
+      button{
+        width: 150px;
+        height: 50px;
+        font-size: 14pt;
+      }
+
+      @media only screen and (min-width: 1024px){
+				body{
+					background-color: red;
+					padding: 100px;
+				}
+      }
+
+      #output {font-family: 'Share Tech Mono', monospace;}
     </style>
     <script>
     
     // 1 - get a reference to the button
-    init();
+    window.onload = init;
 
     function init()
     {
@@ -17,24 +35,31 @@
 
       // 2 - add a click event to button that calls a `sayHello` function
       button.onclick = sayHello;
+
+      document.querySelector("#output").style.color="red";
+      document.querySelector("#output").style.backgroundColor="yellow";
     }
 
     // 3 - create a `sayHello()` function
     function sayHello()
     {
-      console.log("Hello Mystery User");
-        // 3A - get name of person from the <input>
-        //let name = document.querySelector("input");
-        // 3B - get a reference to the #output <p>
-        //let output = document.getElementById("output");
-        // 3C - update HTML of #output <p>
-        //output.innerHTML = name.innerHTML;
+      // 3A - get name of person from the <input>
+      let name = document.querySelector("input-firstname").value;
+      name=name.trim();
+      if(!name)
+      {
+        name = "Peter";
+      }
+      // 3B - get a reference to the #output <p>
+      let output = document.getElementById("#output");
+      // 3C - update HTML of #output <p>
+      output.innerText = name;
     }
     </script>
   </head>
 <body>
   <button>Click Me!</button>
-  <input id="input-firstname" placeholder="Type in your name">
+  <input id="input-firstname" placeholder="Type in your name"></input>
   <p id="output">???</p>
 </body>
 </html>
