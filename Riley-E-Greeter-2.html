@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Greeter</title>
+    <style>
+      button{
+        height: 50px;
+        width: 150px;
+        font-size: 14pt;
+      }
+      @media only screen and (min-width: 1024px){
+				body{
+					background-color: red;
+					padding: 100px;
+				}
+      }
+      p{
+        font-family: 'Bebas Neue', cursive;
+      }
+      *{font-size:1.5em;}
+    </style>
+  </head>
+
+  <body>
+    <button id="btn-hello">Say Hello</button>
+    <button id="btn-goodbye">Say Goodbye</button>
+    <input id="input-firstname" placeholder="Type in your firstname">
+    <input id="input-lastname" placeholder="Type in your lastname">
+    <p id="output">???</p>
+
+    <script>
+      function init()
+      {
+        const helloBtn = document.querySelector("#btn-hello");
+
+        helloBtn.onclick = sayHello;
+
+        const goodbyeBtn = document.querySelector("#btn-goodbye");
+
+        goodbyeBtn.onclick = sayGoodbye;
+
+        document.querySelector("#output").style.color="red";
+        document.querySelector("#output").style.backgroundColor="yellow";
+        
+      }
+
+      function sayHello()
+      {
+        let firstname = document.querySelector("#input-firstname").value;
+        firstname.trim();
+        if(!firstname)
+        {
+          firstname = "Peter";
+        }
+
+        let lastname = document.querySelector("#input-lastname").value;
+        lastname.trim();
+        if(!lastname)
+        {
+          lastname = "Parker";
+        }
+        
+        const output = document.querySelector("#output");
+
+        output.innerHTML = `Hello ${firstname} ${lastname}`;
+      }
+
+
+      function sayGoodbye()
+      {
+        let firstname = document.querySelector("#input-firstname").value;
+        firstname.trim();
+        if(!firstname)
+        {
+          firstname = "Peter";
+        }
+
+        let lastname = document.querySelector("#input-lastname").value;
+        lastname.trim();
+        if(!lastname)
+        {
+          lastname = "Parker";
+        }
+        
+        const output = document.querySelector("#output");
+
+        output.innerHTML = `Goodbye ${firstname} ${lastname}`;
+      }
+      window.onload = init;
+    </script>
+  </body>
+</html>
