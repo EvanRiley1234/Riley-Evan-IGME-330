@@ -40,11 +40,13 @@
     <p id="output">???</p>
 
     <script>
+      //function to be called on window loading
       const init = () => {
         const helloBtn = document.querySelector("#btn-hello");
 
         //helloBtn.onclick = sayHello;
 
+        //new eventlistener to allow for a function with parameters
         helloBtn.addEventListener('click', function() {
             greet("hello");
         });
@@ -53,10 +55,13 @@
         const goodbyeBtn = document.querySelector("#btn-goodbye");
 
         //goodbyeBtn.onclick = sayGoodbye;
+
+        //^^^^^^
         goodbyeBtn.addEventListener('click', function() {
             greet("goodbye");
         });
 
+        //add the weird looking mcdonalds look
         document.querySelector("#output").style.color="red";
         document.querySelector("#output").style.backgroundColor="yellow";
       }
@@ -65,6 +70,8 @@
       const greet = (greeting) => {
 
         let shoutify = document.querySelector("#shoutify").checked;
+
+        //get the first and last names and trim them
         let firstname = document.querySelector("#input-firstname").value;
         firstname.trim();
         if(!firstname)
@@ -79,8 +86,10 @@
           lastname = "Parker";
         }
 
+        //what to change on button press
         const output = document.querySelector("#output");
 
+        //check for shoutify and wether its a hello or goodbye
         if(greeting == "hello" && shoutify)
         {
           output.innerHTML = `Hello ${firstname.toUpperCase()} ${lastname.toUpperCase()}`;
@@ -101,6 +110,7 @@
       
 
       /*
+      //old functions
       function sayHello()
       {
         let firstname = document.querySelector("#input-firstname").value;
