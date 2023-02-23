@@ -26,7 +26,6 @@
             
             update(){
                 // YOU DO THIS - increase the .x, and .y properties by 1
-                ctx.fillstyle = this.color;
                 this.x += 1;
                 this.y += 1;
             }
@@ -62,8 +61,8 @@
             ctx = canvas.getContext("2d");
             canvas.width = canvasWidth;
             canvas.height = canvasHeight;
-            circle1 = new CircleSprite(0,0,10,"blue");
-            circle2 = new CircleSprite(0,100,50,"red");
+            circle1 = new CircleSprite(100,100,20,"green");
+            circle2 = new CircleSprite(100,200,30,"red");
             loop();
         };
 	
