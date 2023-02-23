@@ -10,38 +10,60 @@
         const canvasWidth = 640, canvasHeight = 480;
 	
         let ctx;
+        let circle1;
+        let circle2;
 
         class CircleSprite{
             static type = "arc"; // demoing a static (class) variable here
             constructor(x,y,radius,color){
                 console.log(`${this.constructor.type} created`); // access static property (alternatively, CircleSprite.type)
                 // YOU DO THIS - initialize .x, .y, .radius and .color properties
-            
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
             }
             
             update(){
                 // YOU DO THIS - increase the .x, and .y properties by 1
+                ctx.fillstyle = this.color;
+                this.x += 1;
+                this.y += 1;
             }
             
             draw(ctx){
                 // YOU DO THIS 
                 // fill a circle - utilize the ctx argument, and the .x, .y, .radius and .color properties
                 // don't forget about ctx.save() and ctx.restore()
+                console.log("drew");
                 ctx.save();
+                ctx.fillstyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 10, 0, Math.PI * 2, this.color, false);
+                ctx.closePath();
                 ctx.restore();
             }
         }
 
+
         const loop = () => {
-            let circle1 = new CircleSprite();
             setTimeout(loop, 1000/60);
+            ctx.save();
             ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+            ctx.restore();
+            circle1.update();
+            circle2.update();
+            circle1.draw(ctx);
+            circle2.draw(ctx);
+            
         }
         
         const init = () => {
             ctx = canvas.getContext("2d");
             canvas.width = canvasWidth;
             canvas.height = canvasHeight;
+            circle1 = new CircleSprite(0,0,10,"blue");
+            circle2 = new CircleSprite(0,100,50,"red");
             loop();
         };
 	
