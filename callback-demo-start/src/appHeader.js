@@ -34,7 +34,11 @@ class AppHeader extends HTMLElement{
     this.callback = this.callback || defaultCallback;
     
     // I. GET BUTTON CLICKING WORKING - SEE HTML FILE FOR REQUIREMENTS
-    this.shadowRoot.document.querySelector("#btn-hello").onclick = () =>{
+    this.shadowRoot.querySelector("#btn-hello").onclick = () => {
+      this.callback(this.greeting);
+    }
+    this.shadowRoot.querySelector("#btn-goodbye").onclick = () => {
+      this.callback(`${this.farewell} and the secret number is ${this.specialNumber}`);
       
     }
     this.render();
@@ -42,6 +46,12 @@ class AppHeader extends HTMLElement{
 
   disconnectedCallback(){
     // II. CLEAN UP - SET THE BUTTON .ONCLICK HANDLERS TO NULL
+    this.shadowRoot.querySelector("#btn-hello").onclick = () =>{
+
+    }
+    this.shadowRoot.querySelector("#btn-goodbye").onclick = () => {
+      
+    }
   }
 
   render(){
