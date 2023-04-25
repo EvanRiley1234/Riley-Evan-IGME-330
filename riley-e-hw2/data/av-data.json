@@ -1,0 +1,20 @@
+{
+    "data" : {
+        "title": "Evan's Visualizer",
+            "audioDiv": {
+                "track1" : "Do you wanna funk?",
+                "track2" : "Swinging",
+                "track3" : "Mystery POP",
+                "track4" : "Step By Step",
+                "track5" : "Ready",
+                "track6" : "Flash Beat",
+                "track 7" : "In the Morning",
+                "track 8" : "Don't stop music"
+            },
+            "instructionsDiv": {
+                "Buttons" : "hit Play to pause and pause to play, hit full screen to full screen, use the dorpdown to select desired track",
+                "Toggles" : "use toggles to either turn on/off some parts or change the way the scene is viewed",
+                "Bottom sliders" : "use either slider to add or remove treble and or bass"
+            }
+    }
+}

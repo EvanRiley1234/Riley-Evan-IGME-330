@@ -1,0 +1,64 @@
+ @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
+body {
+  background: #301934;
+  font-family: 'Share Tech Mono', monospace;
+}
+  
+canvas{
+  background-image: url('media/CityBackgroundjpg.jpg');
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  background: #fafafa;
+}
+
+#controls{
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fafafa;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  background-color: #6C3082;
+  text-align: center;
+  max-width: 1000px;
+  height: 350px;
+}
+
+#label-volume{
+  margin-left: 1rem;
+}
+
+section{
+  margin-bottom: 1rem;
+}
+
+#btn-play{
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  width: 6rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+#select-track{
+  font-family: 'Share Tech Mono', monospace;
+}
+
+button[data-playing="yes"]:after{
+  content: "Pause";
+}
+
+button[data-playing="no"]:after{
+  content: "Play";
+}
+
+#btn-fs{
+  font-size: 1.2rem;
+  width: 8rem;
+  font-family: 'Share Tech Mono', monospace;
+}

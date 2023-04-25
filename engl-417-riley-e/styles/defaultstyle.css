@@ -1,0 +1,44 @@
+body{
+    background: rgb(195,206,209);
+    background: linear-gradient(90deg, rgba(195,206,209,1) 0%, rgba(230,223,218,1) 35%, rgba(195,206,209,1) 100%);
+}
+
+header{
+    outline-style: solid;
+    outline-color: black;
+    outline-width: medium;
+    background: rgb(225,160,108);
+    background: linear-gradient(90deg, rgba(225,160,108,1) 0%, rgba(230,223,218,1) 35%, rgba(223,130,157,1) 100%);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#navbar{
+    background: rgb(225,160,108);
+    background: linear-gradient(90deg, rgba(225,160,108,1) 0%, rgba(230,223,218,1) 35%, rgba(223,130,157,1) 100%);
+    position:fixed;
+    width: 150px;
+}
+
+#lipReader{
+    display: flex;
+    justify-content: center;
+}
+
+#lipReaderImg{
+    max-width: 300px;
+    max-height: 300p;
+}
+
+h2{
+    align-items: center;
+    
+    text-align: center;
+}
+
+p{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
